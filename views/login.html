@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>public chat</title>
+    <link rel="stylesheet" href="/all.min.css" />
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <style>
+      body {
+        background-color: #f8f8f8;
+      }
+
+      .chat-bg {
+        background-color: #f8f8f8;
+      }
+
+      #send-btn {
+        right: 0.3rem;
+        top: 0.3rem;
+      }
+
+      #chat-container {
+        height: 400px;
+        overflow-y: scroll;
+      }
+
+      .loader {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader">
+      <div class="spinner-grow text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    </div>
+    <main class="d-none">
+      <h2 class="display-4 text-center py-4">login to start a chat</h2>
+      <div class="rounded col-4 mx-auto bg-white shadow-lg p-4">
+        <form onsubmit="login(event)">
+          <div class="form-group mb-3">
+            <input
+              type="text"
+              required
+              name="username"
+              class="form-control"
+              placeholder="username"
+            />
+          </div>
+          <button class="btn btn-primary w-100">login</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="socket.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>
